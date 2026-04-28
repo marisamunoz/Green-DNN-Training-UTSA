@@ -110,7 +110,7 @@ def main():
     else:
         # Fallback: plain PyTorch single GPU
         rank       = 0
-        world_size = 1
+        world_size = int(os.environ.get("WORLD_SIZE", 1))
 
     device = torch.device(f"cuda:{rank}" if torch.cuda.is_available() else "cpu")
     torch.cuda.set_device(rank)
