@@ -1,0 +1,11 @@
+epoch,epoch_time_s,train_loss,val_loss,val_acc,mem_mb,num_gpus,batch_size,framework
+1,28.085,2.0746,1.7665,33.62,43987.0,1,128,TensorFlow_MirroredStrategy
+2,20.9756,1.4793,1.5288,45.14,43987.0,1,128,TensorFlow_MirroredStrategy
+3,20.9783,1.2145,1.2471,55.73,43987.0,1,128,TensorFlow_MirroredStrategy
+4,20.9918,1.0163,1.1558,59.41,43987.0,1,128,TensorFlow_MirroredStrategy
+5,20.9955,0.8473,0.9675,66.99,43987.0,1,128,TensorFlow_MirroredStrategy
+6,20.9878,0.7107,0.9103,69.11,43987.0,1,128,TensorFlow_MirroredStrategy
+7,20.9721,0.5957,0.872,70.27,43987.0,1,128,TensorFlow_MirroredStrategy
+8,21.1968,0.4798,0.8016,73.89,43987.0,1,128,TensorFlow_MirroredStrategy
+9,20.998,0.3796,0.8988,72.23,43987.0,1,128,TensorFlow_MirroredStrategy
+10,20.9992,0.288,1.027,72.44,43987.0,1,128,TensorFlow_MirroredStrategy
