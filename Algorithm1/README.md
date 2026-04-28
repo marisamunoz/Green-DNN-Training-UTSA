@@ -1,19 +1,17 @@
-# Algorithm 1 Data Parallelism
+# Algorithm 1: Data Parallelism
 
-Baseline comparison of data parallelism across three frameworks:
-- PyTorch Distributed Data Parallel (DDP)
-- TensorFlow MirroredStrategy
-- AxoNN
+Baseline comparison of data parallelism across three frameworks using ResNet18 on CIFAR-10.
+All experiments run on NVIDIA A40 GPUs on NCSA Delta.
 
-## Files
-- `Munoz_Algorithm1_Final_Mar18.pdf` full write-up
-- `train_ddp.py` PyTorch DDP training script
-- `train_tf.py` TensorFlow training script
-- `train_axonn.py` AxoNN training script
-- `submit_all.sh` SLURM job script to run all three
+Frameworks compared: PyTorch DDP, TensorFlow MirroredStrategy, and AxoNN.
+Each framework was tested at 1 GPU and 2 GPUs, with 3 runs per configuration.
 
-## Status
-- Code posted
-- Write-up posted
-- Timing data (pending cluster runs)
-- Performance plots (pending cluster runs)
+## Code
+- train_ddp.py — PyTorch DDP training script
+- train_tf.py — TensorFlow MirroredStrategy training script
+- train_axonn.py — AxoNN training script
+- submit_all.sh — SLURM job script used on Delta
+
+## Results
+CSV results and power logs are in the Results folder, organized by framework.
+Full write-up: Munoz_Algorithm1_Mar18.pdf
