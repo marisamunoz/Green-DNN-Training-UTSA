@@ -24,7 +24,6 @@ import matplotlib.pyplot as plt
 
 DATA_DIR = os.path.expanduser("~/Desktop/algo1_results")
 
-# Colors chosen for readability in both color and grayscale print
 C = {
     "ddp_1":   "#2c7bb6",
     "ddp_2":   "#74add1",
@@ -118,9 +117,9 @@ def total_power_from_log(log_path):
 ddp_1 = load_runs("results_pytorch_1gpu*.csv")
 ddp_2 = load_runs("results_pytorch_2gpu*.csv")
 tf_1  = load_runs("results_tensorflow_1gpu*.csv")
-tf_2  = load_runs("results_tensorflow_r*.csv") + load_runs("results_tensorflow.csv")
+tf_2  = load_runs("results_tensorflow_2gpu*.csv")
 ax_1  = load_runs("results_axonn_1gpu*.csv")
-ax_2  = load_runs("results_axonn_r*.csv") + load_runs("results_axonn.csv")
+ax_2  = load_runs("results_axonn_2gpu*.csv")
 
 configs = {
     "DDP 1 GPU":   ddp_1,
