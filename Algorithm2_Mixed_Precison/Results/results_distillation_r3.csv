@@ -1,0 +1,11 @@
+epoch,epoch_time_s,train_loss,test_acc,mem_alloc_mb,num_gpus,batch_size,precision,temperature,alpha
+1,7.527,1.5913,45.07,462.51,1,128,Distillation,4.0,0.7
+2,7.3815,1.1305,53.68,462.51,1,128,Distillation,4.0,0.7
+3,7.6179,1.0236,57.07,462.51,1,128,Distillation,4.0,0.7
+4,7.4546,0.9477,56.6,462.51,1,128,Distillation,4.0,0.7
+5,7.3271,0.8887,63.15,462.51,1,128,Distillation,4.0,0.7
+6,7.4801,0.8371,69.34,462.51,1,128,Distillation,4.0,0.7
+7,7.3582,0.7914,72.99,462.51,1,128,Distillation,4.0,0.7
+8,7.3713,0.7432,74.5,462.51,1,128,Distillation,4.0,0.7
+9,7.3714,0.7011,75.92,462.51,1,128,Distillation,4.0,0.7
+10,7.3453,0.6759,77.23,462.51,1,128,Distillation,4.0,0.7
