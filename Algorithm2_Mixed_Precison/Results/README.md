@@ -1,8 +1,6 @@
 # Algorithm 2 Results
 
-ResNet18 trained on CIFAR-10 using reduced-precision techniques.
-Hardware: single NVIDIA A40 GPU on NCSA Delta.
-Each method was run 3 times to account for variance.
+ResNet18 trained on CIFAR-10 using reduced-precision techniques on a single NVIDIA A40 GPU on NCSA Delta. Each configuration was run 3 times to account for variance.
 
 FP16 runs:
 results_fp16_r1.csv
@@ -24,4 +22,4 @@ results_distillation_r1.csv
 results_distillation_r2.csv
 results_distillation_r3.csv
 
-Metrics: epoch time, training loss, test accuracy, memory usage, precision type, batch size.
+Metrics collected per epoch: training time, training loss, test accuracy, memory usage, precision type, batch size.

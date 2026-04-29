@@ -1,32 +1,21 @@
 # Algorithm 2: Mixed Precision and Quantization
 
-Comparison of reduced-precision training techniques on ResNet18/CIFAR-10.
-All experiments run on a single NVIDIA A40 GPU on NCSA Delta.
-GPU count is held constant at 1 to isolate the effect of precision format,
-consistent with the 1 GPU baseline from Algorithm 1.
+This folder contains the code and results for Algorithm 2 of the term project, which compares reduced-precision training techniques on ResNet18 trained on CIFAR-10. All experiments were run on a single NVIDIA A40 GPU on NCSA Delta. GPU count is held constant at 1 so results are directly comparable to the 1 GPU baseline from Algorithm 1.
 
-Each method was run 3 times to account for variance.
+Each method was run 3 times to account for variance from cluster scheduling.
 
-## Methods
-
-FP16: Half-precision training using PyTorch AMP with GradScaler.
-BF16: Brain Float 16 training, numerically more stable than FP16.
-INT8: Post-training dynamic quantization applied after FP32 training.
-Distillation: ResNet18 student trained with soft labels from ResNet50 teacher.
-
-Note: Quantization-Aware Training (QAT) was attempted but encountered a
-compatibility issue with PyTorch 2.6 fake quantization on the cluster
-(zero_point range error). This is a known issue with the fbgemm/x86 backend
-on this PyTorch version and is documented in the error logs.
+The four methods implemented are FP16 mixed precision, BF16 mixed precision, INT8 post-training quantization, and knowledge distillation. Quantization-Aware Training (QAT) was also attempted but ran into a compatibility issue with PyTorch 2.6 fake quantization on the cluster. The error is documented in the job logs.
 
 ## Code
 
-train_fp16.py — FP16 mixed precision training script
-train_bf16.py — BF16 mixed precision training script
-train_int8.py — INT8 post-training dynamic quantization
-train_distillation.py — Knowledge distillation training script
+train_fp16.py trains ResNet18 using PyTorch AMP with automatic FP16 casting and GradScaler for gradient stability.
+
+train_bf16.py trains using BF16 precision, which has the same exponent range as FP32 and does not need GradScaler.
+
+train_int8.py trains in FP32 then applies dynamic INT8 quantization to the final model.
+
+train_distillation.py trains a ResNet18 student using soft label supervision from a ResNet50 teacher.
 
 ## Results
 
-CSV results are in the Results folder, organized by method.
-Full write-up: see Implementation Paper in Algorithm1 folder.
+CSV result files and a README are in the Results folder.
